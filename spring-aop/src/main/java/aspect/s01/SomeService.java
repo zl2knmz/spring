@@ -6,4 +6,6 @@ package aspect.s01;
  */
 public interface SomeService {
     String doSome(String name, int age);
+
+    int getSome(String name);
 }

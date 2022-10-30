@@ -20,6 +20,9 @@ public class DemoTest {
 
         String s = someService.doSome("张三", 22);
         System.out.println(s);
+
+        int li = someService.getSome("李四");
+        System.out.println(li);
     }
 
 }

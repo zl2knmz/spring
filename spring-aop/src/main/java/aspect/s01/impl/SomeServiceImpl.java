@@ -9,7 +9,13 @@ import aspect.s01.SomeService;
 public class SomeServiceImpl implements SomeService {
     @Override
     public String doSome(String name, int age) {
+        System.out.println("doSome调用.............");
         return "abc";
     }
 
+    @Override
+    public int getSome(String name) {
+        System.out.println("getSome调用.............");
+        return 0;
+    }
 }
