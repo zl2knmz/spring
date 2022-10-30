@@ -22,8 +22,4 @@ public class DemoTest {
         System.out.println(s);
     }
 
-    @Test
-    public void test02(){
-        System.out.println("11111111111111");
-    }
 }
