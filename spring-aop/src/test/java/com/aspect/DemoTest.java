@@ -25,4 +25,27 @@ public class DemoTest {
         System.out.println(li);
     }
 
+    @Test
+    public void test02(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("s01/applicationContext.xml");
+        // 取出代理对象
+        SomeServiceImpl someService = (SomeServiceImpl)ac.getBean("someService");
+        System.out.println(someService.getClass());
+
+        String s = someService.doSome("张三", 22);
+        System.out.println(s);
+
+    }
+
+    @Test
+    public void test03(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("s01/applicationContext.xml");
+        // 取出代理对象
+        SomeService someService = (SomeService)ac.getBean("someServiceImpl");
+        System.out.println(someService.getClass());
+
+        String s = someService.doSome("张三", 22);
+        System.out.println(s);
+
+    }
 }

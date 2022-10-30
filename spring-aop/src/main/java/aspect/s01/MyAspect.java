@@ -2,6 +2,7 @@ package aspect.s01;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
 
 /**
  * 此类为切面类，包含各种切面方法。
@@ -9,6 +10,7 @@ import org.aspectj.lang.annotation.Before;
  * @date 2022/10/28 23:45
  */
 @Aspect
+@Component
 public class MyAspect {
 
     /**
@@ -26,7 +28,11 @@ public class MyAspect {
      *  业务方法
      *  public String doSome(String name, int age)
      */
-    @Before(value = "execution(public String aspect.s01.impl.SomeServiceImpl.doSome(String, int))")
+//    @Before(value = "execution(public String aspect.s01.impl.SomeServiceImpl.doSome(String, int))")
+//    @Before(value = "execution(public * aspect.s01.impl.SomeServiceImpl.*(..))")
+    @Before(value = "execution(* aspect.s01.impl.*.*(..))")
+//    @Before(value = "execution(* aspect.s01.impl..*(..))")
+//    @Before(value = "execution(* *(..))")
     public void myBefore(){
         System.out.println("切面方法中的前置功能实现............");
     }
