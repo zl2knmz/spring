@@ -1,2 +1,4 @@
 
 *.class
+
+spring-aop/.idea/
