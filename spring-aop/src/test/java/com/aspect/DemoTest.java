@@ -1,6 +1,7 @@
 package com.aspect;
 
 import aspect.s01.SomeService;
+import aspect.s01.impl.SomeServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -19,7 +20,10 @@ public class DemoTest {
 
         String s = someService.doSome("张三", 22);
         System.out.println(s);
+    }
 
-
+    @Test
+    public void test02(){
+        System.out.println("11111111111111");
     }
 }
