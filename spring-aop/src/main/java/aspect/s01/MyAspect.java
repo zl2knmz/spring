@@ -1,5 +1,6 @@
 package aspect.s01;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -33,8 +34,11 @@ public class MyAspect {
     @Before(value = "execution(* aspect.s01.impl.*.*(..))")
 //    @Before(value = "execution(* aspect.s01.impl..*(..))")
 //    @Before(value = "execution(* *(..))")
-    public void myBefore(){
+    public void myBefore(JoinPoint joinPoint){
         System.out.println("切面方法中的前置功能实现............");
+
+        // String aspect.s01.impl.SomeServiceImpl.doSome(String,int)
+        System.out.println("获取业务方法的 返回值类型 方法名 方法参数类型=" + joinPoint.getSignature());
     }
 
 }
