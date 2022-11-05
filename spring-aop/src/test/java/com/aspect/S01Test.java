@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author zl
  * @date 2022/10/29 12:49
  */
-public class DemoTest {
+public class S01Test {
     @Test
     public void test01(){
         ApplicationContext ac = new ClassPathXmlApplicationContext("s01/applicationContext.xml");
@@ -37,6 +37,9 @@ public class DemoTest {
 
     }
 
+    /**
+     * 前置通知测试 @Before
+     */
     @Test
     public void test03(){
         ApplicationContext ac = new ClassPathXmlApplicationContext("s01/applicationContext.xml");
@@ -48,4 +51,5 @@ public class DemoTest {
         System.out.println(s);
 
     }
+
 }
