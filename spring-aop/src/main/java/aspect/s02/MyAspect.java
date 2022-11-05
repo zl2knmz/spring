@@ -34,8 +34,18 @@ public class MyAspect {
     public void myAfterReturning(Object obj){
         System.out.println("后置功能实现............");
         if (null != obj) {
-            obj = obj.toString().toUpperCase();
-            System.out.println("在切面方法中目标方法的返回值：" + obj);
+            if(obj instanceof String){
+                obj = obj.toString().toUpperCase();
+                System.out.println("在切面方法中目标方法的返回值：" + obj);
+            }
+
+            if(obj instanceof Student){
+                Student stu = (Student) obj;
+                System.out.println("在切面方法中目标方法的返回值-修改前：" + stu);
+                stu.setName("李四");
+                stu.setAge(24);
+                System.out.println("在切面方法中目标方法的返回值-修改后：" + stu);
+            }
         }
     }
 

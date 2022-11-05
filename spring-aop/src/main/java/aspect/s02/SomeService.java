@@ -8,4 +8,6 @@ public interface SomeService {
     String doSome(String name, int age);
 
     int getSome(String name);
+
+    Student getChange();
 }

@@ -1,6 +1,7 @@
 package aspect.s02.impl;
 
 import aspect.s02.SomeService;
+import aspect.s02.Student;
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,5 +20,10 @@ public class SomeServiceImpl implements SomeService {
     public int getSome(String name) {
         System.out.println("getSome调用.............");
         return 0;
+    }
+
+    public Student getChange() {
+        System.out.println("getChange() 调用.............");
+        return new Student("张三",23);
     }
 }
