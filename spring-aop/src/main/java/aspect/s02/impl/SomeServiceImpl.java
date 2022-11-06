@@ -22,6 +22,7 @@ public class SomeServiceImpl implements SomeService {
         return 0;
     }
 
+    @Override
     public Student getChange() {
         System.out.println("getChange() 调用.............");
         return new Student("张三",23);

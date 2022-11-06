@@ -2,7 +2,6 @@ package com.aspect;
 
 import aspect.s02.SomeService;
 import aspect.s02.Student;
-import aspect.s02.impl.SomeServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -29,7 +28,7 @@ public class S02Test {
     }
 
     /**
-     * 修改返回值（基本类型除外）
+     * 修改返回值（8种基本类型（和String）除外）
      * 后置通知测试 @AfterReturning
      */
     @Test
