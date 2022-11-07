@@ -1,7 +1,7 @@
 package aspect.s04;
 
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 /**
@@ -21,13 +21,37 @@ public class MyAspect {
      * 3、方法名称自定义
      * 4、方法没有参数，如果有也只能是JoinPoint
      * 5、使用@After 注解声明是最终通知
-     *    参数：
-     *        value：指定切入点表达式
+     * 参数：
+     * value：指定切入点表达式
      */
-    @After(value = "execution(* aspect.s04.*.*(..))")
+    @After(value = "mycut()")
     public void myAfter() {
         // 最终功能实现
         System.out.println("最终通知功能实现............");
     }
 
+    @Before(value = "mycut()")
+    public void myBefore() {
+        System.out.println("前置通知功能实现............");
+    }
+
+    @AfterReturning(value = "mycut()", returning = "obj")
+    public void myAfterReturning(Object obj) {
+        System.out.println("后置通知功能实现............");
+    }
+
+    @Around(value = "mycut()")
+    public Object myAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        System.out.println("环绕通知的前置功能实现............");
+        Object proceed = proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
+        System.out.println("环绕通知的后置功能实现............");
+        return proceed;
+    }
+
+    /**
+     * 切点表达式取别名
+     */
+    @Pointcut(value = "execution(* aspect.s04.*.*(..))")
+    public void mycut() {
+    }
 }
