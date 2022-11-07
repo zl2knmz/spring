@@ -24,23 +24,23 @@ public class MyAspect {
      * 参数：
      * value：指定切入点表达式
      */
-    @After(value = "mycut()")
+    @After(value = "myCut()")
     public void myAfter() {
         // 最终功能实现
         System.out.println("最终通知功能实现............");
     }
 
-    @Before(value = "mycut()")
+    @Before(value = "myCut()")
     public void myBefore() {
         System.out.println("前置通知功能实现............");
     }
 
-    @AfterReturning(value = "mycut()", returning = "obj")
+    @AfterReturning(value = "myCut()", returning = "obj")
     public void myAfterReturning(Object obj) {
         System.out.println("后置通知功能实现............");
     }
 
-    @Around(value = "mycut()")
+    @Around(value = "myCut()")
     public Object myAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("环绕通知的前置功能实现............");
         Object proceed = proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
@@ -52,6 +52,6 @@ public class MyAspect {
      * 切点表达式取别名
      */
     @Pointcut(value = "execution(* aspect.s04.*.*(..))")
-    public void mycut() {
+    public void myCut() {
     }
 }
