@@ -18,7 +18,7 @@ public class MyTest {
 
         // 取出 UsersServiceImpl
         UsersService usersService = (UsersService) ac.getBean("usersServiceImpl");
-        int num = usersService.save(new Users(100L, "张三", "123"));
+        int num = usersService.save(new Users(101L, "张三1", "1234"));
         System.out.println(num);
     }
 }
