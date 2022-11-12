@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="liang.mapper.UsersMapper">
+    <!--
+        int insert(Users users);
+        实体类
+        private Long id;
+        private String name;
+        private String password;
+    -->
+    <insert id="insert" parameterType="liang.pojo.Users">
+    <!--<insert id="insert" parameterType="users">-->
+        insert into users values(#{id},#{name},#{password})
+    </insert>
+</mapper>

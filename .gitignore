@@ -2,3 +2,5 @@
 *.class
 
 spring-aop/.idea/
+
+spring-aop/target/*
