@@ -4,6 +4,7 @@
 <mapper namespace="liang.mapper.AccountsMapper">
 
     <!--<insert id="insert" parameterType="liang.pojo.Accounts">-->
+    <!-- 注册实体类的别名 -->
     <insert id="insert" parameterType="accounts">
         insert into accounts values(#{id},#{name},#{content})
     </insert>
