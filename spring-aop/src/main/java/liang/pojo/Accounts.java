@@ -11,4 +11,12 @@ public class Accounts {
     private Long id;
     private String name;
     private String content;
+
+    public Accounts() {}
+
+    public Accounts(Long id, String name, String content) {
+        this.id = id;
+        this.name = name;
+        this.content = content;
+    }
 }
