@@ -25,8 +25,9 @@ public class UsersServiceImpl implements UsersService {
      *
      */
     @Autowired
-    UsersMapper usersMapper;
+    private UsersMapper usersMapper;
 
+    @Override
     public int save(Users users) {
         return usersMapper.insert(users);
     }

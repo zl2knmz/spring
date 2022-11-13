@@ -31,7 +31,9 @@ public class MyTest {
 
         // 取出 AccountsServiceImpl
         AccountsService accountsService = (AccountsService) ac.getBean("accountsServiceImpl");
-        int num = accountsService.save(new Accounts(101L, "李四1", "abcd1"));
+
+        System.out.println("-----getClass------" + accountsService.getClass());
+        int num = accountsService.save(new Accounts(105L, "李四5", "账户安全5"));
         System.out.println(num);
     }
 }
