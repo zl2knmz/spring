@@ -32,3 +32,10 @@ INSERT  INTO `users`(`id`,`name`,`password`) VALUES
 (100,'张三','123'),
 (101,'张三1','1234');
 
+# 清空表数据
+ DELETE FROM users;
+
+ TRUNCATE TABLE users;
+
+ TRUNCATE TABLE accounts;
+

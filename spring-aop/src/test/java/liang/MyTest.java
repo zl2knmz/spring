@@ -36,4 +36,16 @@ public class MyTest {
         int num = accountsService.save(new Accounts(105L, "李四5", "账户安全5"));
         System.out.println(num);
     }
+
+    @Test
+    public void testTrans() {
+        // 创建容器并启动
+        ApplicationContext ac = new ClassPathXmlApplicationContext("liang/applicationContext_trans.xml");
+
+
+        // 取出 UsersServiceImpl
+        UsersService usersService = (UsersService) ac.getBean("usersServiceImpl");
+        int num = usersService.save(new Users(101L, "张三1", "1234"));
+        System.out.println(num);
+    }
 }
